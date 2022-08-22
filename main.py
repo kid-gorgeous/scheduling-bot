@@ -2,11 +2,35 @@ import logging
 import threading
 import time
 
-import config
+
+import scheduler
+from config import(clear,user)
+from database import (Database)
+from termcolor import colored
+
+database = Database()
 
 def main():
-    print("Hello {}".format(config.user))
+    clear()
+    print(colored("\nHello {}, welcome to your personalized commandline Calender".format(user), 'cyan'))
 
+    # TODO: add schedule type
+    # create a scheduler object
+    scheduler_obj = scheduler.Scheduler()
+
+    print(colored("\nA scheduler object has been created. Would you like to edit it? (y/n)", 'green'))
+    edit_scheduler = input()
+
+    if edit_scheduler == "y":
+        clear()
+        event = input(colored("What would you like to add to your calender: ", 'yellow'))
+        month = input(colored("What month is this scheduled for?: ", 'yellow'))
+        day = input(colored("What day would you like to plan an event on?: ", 'yellow'))
+            
+        db.add_event(month, day, event)
+        db.print_event()
+
+            
 
 
 
@@ -23,6 +47,7 @@ def thread_function(name):
     logging.info("Thread %s: finishing", name)
 
 if __name__ == "__main__":
+    main()
     # format = "%(asctime)s: %(message)s"
     # logging.basicConfig(format=format, level=logging.INFO,
     #                     datefmt="%H:%M:%S")
