@@ -27,7 +27,7 @@ def main():
         month = input(colored("What month is this scheduled for?: ", 'yellow'))
         day = input(colored("What day would you like to plan an event on?: ", 'yellow'))
             
-        db.add_event(month, day, event)
+        db = database.add_event(month, day, event)
         db.print_event()
 
             

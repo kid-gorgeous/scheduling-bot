@@ -13,6 +13,11 @@ class Database:
         # creates database, and connection
         self.con = sqlite3.connect('calendar.db')
         self.cur = self.con.cursor()
+        
+        # creates table if it doesn't exist
+        self.cur.execute("CREATE TABLE IF NOT EXISTS events(id INTEGER PRIMARY KEY, month INTEGER, day INTEGER, event TEXT)")
+        self.con.commit()
+        
         print("passed")
         pass
 
