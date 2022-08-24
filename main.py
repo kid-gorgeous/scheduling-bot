@@ -26,8 +26,9 @@ def main():
         event = input(colored("What would you like to add to your calender: ", 'yellow'))
         month = input(colored("What month is this scheduled for?: ", 'yellow'))
         day = input(colored("What day would you like to plan an event on?: ", 'yellow'))
+        cal = input(colored("What calendar would you like to add this to?: ", 'yellow'))
             
-        db = database.add_event(month, day, event)
+        db = database.add_event(month,day,cal,event)
         db.print_event()
 
             

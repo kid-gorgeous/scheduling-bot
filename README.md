@@ -28,3 +28,7 @@ Setting up this Application is relatively easy. Since this project is in it's ea
 ## Currently updating daily! 
 
 #### Adding SQL Database, Scheduler, Alarm & Reminder System, and Chatbot Functionalities
+
+### Creating a config file 
+
+There are specific functions that are used thoughtout the application. In order to allow for the application to run properly please include the following lambda function, after import the os: clear = lambda: os.system('clear'). Next please create two user variables(user, and role). Set the user to your information, and the role to admin if you are using this for yourself. Finally, please create two string variables that will be initilized with a discord token and a telegram token (discord_token, telegram_token)
